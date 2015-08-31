@@ -28,8 +28,8 @@
     'complexity': "easy",
     'depends': ['project'],
     "description": """
-        This module provides the functionality to store digital signature image for a record.
-        The example can be seen into the projects form view where we have added a test field under signature.
+        This module changes tree view for tasks so they can be used as a checklist, changing their
+        status without using the form view. 
     """,
     'data': [
         'views/checklist_view.xml'

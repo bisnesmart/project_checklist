@@ -2,20 +2,44 @@
 <openerp>
 <data>
     <!-- Vista de árbol -->
-            <record model="ir.ui.view" id="project_checklist_tree_view">
-                <field name="name">checklist.tree</field>
-                <field name="model">project.project</field>
-                <field name="inherit_id" ref="view_task_tree2"/>
-                <field name="arch" type="xml">
-                    <!-- Vista de tree -->
-                    <form string="Checklist">
-                                              
-                                <field name="name" />
-                               
-                            
-                    </form>
-                </field>
-            </record>
+        <record model="ir.ui.view" id="view_task_tree2">
+            <field name="name">project.checklist.tree</field>
+            <field name="model">project.task</field>
+            <field eval="1" name="priority"/>
+            <field name="view_mode">tree</field>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <!-- Vista de tree -->
+                <tree string="Tasks">
+                    <field name="name"/>
+                    <field name="progress" invisible="1" />
+                       
+                        
+                </tree>
+            </field>
+        </record>
+
+    <!-- Acción de checklist -->
+
+        <act_window id="action_checklist" 
+            name="Checklist"
+            res_model="project.task"
+            view_mode="tree,form" />
+
+    <!-- Menú de checklist -->
+        <menuitem id="menu_checklist"
+            name="Checklists"
+            parent="project.menu_project_management"
+            sequence="1"
+            action="action_checklist"
+            />
+
+
+
+
+
+
+
 
 
 </data>
