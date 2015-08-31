@@ -10,10 +10,11 @@
             <field name="mode">primary</field>
             <field name="arch" type="xml">
                 <!-- Vista de tree -->
-                <tree string="Tasks">
+                <tree string="Tasks" editable="top" >
                     <field name="name"/>
                     <field name="progress" invisible="1" />
-                       
+                    <field name="stage_id" invisible="context.get('set_visible',False)" widget="selection" />
+                    <field name="project_id" invisible="1"/>
                         
                 </tree>
             </field>
