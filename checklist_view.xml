@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+    <!-- Vista de árbol -->
+            <record model="ir.ui.view" id="project_checklist_tree_view">
+                <field name="name">checklist.tree</field>
+                <field name="model">project.project</field>
+                <field name="inherit_id" ref="view_task_tree2"/>
+                <field name="arch" type="xml">
+                    <!-- Vista de tree -->
+                    <form string="Checklist">
+                                              
+                                <field name="name" />
+                               
+                            
+                    </form>
+                </field>
+            </record>
+
+
+</data>
+</openerp>
